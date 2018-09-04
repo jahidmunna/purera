@@ -1,0 +1,60 @@
+CREATE DATABASE puraraDB;
+
+CREATE TABLE managerTable(
+    managerID INT AUTO_INCREMENT,
+    managerName VARCHAR(50),
+    managerPassword VARCHAR(50),
+    PRIMARY KEY (managerID)
+);
+
+INSERT INTO managerTable (managerName,managerPassword)
+VALUES ('admin', SHA1('1500'));
+
+CREATE TABLE staffTable (
+    staffID INT AUTO_INCREMENT,
+    staffName VARCHAR(50) NOT NULL,
+    staffPhone VARCHAR(15) NOT NULL,
+    staffAddress VARCHAR(150),
+    staffEmail VARCHAR(50),
+    PRIMARY KEY (staffID),
+    UNIQUE KEY (staffName,staffPhone)
+)
+
+CREATE TABLE customerTable (
+    customerID INT NOT NULL,
+    customerRate INT NOT NULL,
+    customerName VARCHAR(50) NOT NULL,
+    customerCorrospondingStaff INT NOT NULL,
+    customerPhone VARCHAR(15),    
+    customerAddress VARCHAR(150),
+    customerEmail VARCHAR(50),
+    PRIMARY KEY (customerID),
+    FOREIGN KEY (customerCorrospondingStaff) REFERENCES staffTable (staffID),
+    UNIQUE KEY (customerName,customerPhone)
+)
+
+
+CREATE TABLE customerDue (
+    dueID INT AUTO_INCREMENT,
+    cID INT NOT NULL,
+    date DATE NOT NULL,
+    dueJar INT NOT NULL,
+    dueMoney INT NOT NULL,
+    PRIMARY KEY(dueID),
+    UNIQUE KEY (cID,date),
+    FOREIGN KEY(cID) REFERENCES customertable (customerID)
+);        
+
+
+CREATE TABLE delevery(
+    deleveryID INT NOT NULL AUTO_INCREMENT,
+    cID INT NOT NULL,
+    date DATE NOT NULL,
+    jarGiven INT NOT NULL DEFAULT 0,
+    jarReceive INT NOT NULL DEFAULT 0,
+    paymentToday INT NOT NULL DEFAULT 0,
+    commentIfAny VARCHAR (255),
+    PRIMARY KEY (deleveryID),
+    UNIQUE KEY (cID,date),
+    FOREIGN KEY (cID) REFERENCES customertable (customerID)
+);

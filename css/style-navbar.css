@@ -1,0 +1,28 @@
+#nav-item-name{
+    font-size: 15px;
+    color: #F1C40F;    
+    padding-left:6px;
+    padding-right: 6px;
+}
+
+#drowdownMenu li{
+    margin: 2px;
+}
+#drowdownMenu li:hover{
+    background: rgb(219, 217, 210);
+}
+#drowdownMenu li a{
+    margin-left: 12px;    
+    color: black;
+    text-decoration: none;
+}
+
+/*
+.dropdown:hover>.dropdown-menu {
+    display: block;
+}
+.dropdown > .dropdown-toggle:active {
+    //Without this, clicking will make it sticky
+    pointer-events: none;
+}
+*/

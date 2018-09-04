@@ -1,0 +1,18 @@
+#output, #output2{
+    display: none;
+    min-height: 250px;
+    color:#505050;
+    font-size: 20px; 
+    font-family: "Libre Baskerville", serif; 
+    line-height: 25px; 
+    text-align: center;
+    text-shadow: 0 1px 1px #fff; 
+    padding-top: 15px; 
+}
+td {
+    text-align: left;
+    padding: 5px;
+}
+#output2 table, #output2 tr,  #output2 td{
+    text-align: center;
+}

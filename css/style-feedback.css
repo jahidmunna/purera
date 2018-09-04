@@ -1,0 +1,22 @@
+.isa_success {
+    font-size: 40px;
+    padding: 10px;
+    color: #4F8A10;
+    background-color: #DFF2BF;
+}
+.option:hover{
+    background: #186A3B;
+    color: white;
+    border: none;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.btn{
+    font-family: Arial, Helvetica, sans-serif;
+    width: 60%;
+    height: 30px;
+    font-size: 14px;
+    border: 1px solid black;
+}
